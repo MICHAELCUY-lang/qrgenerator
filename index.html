@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>QR CODE GENERATOR</title>
+
+</head>
+<body>
+  <div class="container">
+      <p style="text-align: center; font-size: xx-large; color: white; font-family: Honk;">Type text or paste your link</p>
+      <input type="text" placeholder= "type text or paste link" id="qrText" style="font-family: Cherry Bomb One; font-size: x-large;">
+      <div id="imgQr">
+        <img src="" id="qrImage">
+      </div>
+      <button onclick="generateQRCode()" style="font-size: x-large; color: black;">Generate QR code</button>
+  </div>
+    
+
+  <script>
+  let imgQr = document.getElementById("imgQr");
+  let qrImage = document.getElementById("qrImage");
+  let qrText = document.getElementById("qrText");
+
+  function generateQRCode() {
+    if(qrText.value.length > 0){
+    qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+    imgQr.classList.add("show-img")}
+  }
+</script>
+  </script>
+</body>
+</html>
